@@ -25,33 +25,15 @@
 <p>See <a href="https://github.com/wix/detox/blob/master/docs/Troubleshooting.Synchronization.md#identifying-which-synchronization-mechanism-causes-us-to-wait-too-much">here</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="syntax-error-unexpected-token"></a><a href="#syntax-error-unexpected-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax Error: Unexpected Token</h3>
 <p><strong>Issue:</strong> Running tests immediately throws the following error:</p>
-<pre><code class="hljs">beforeEach(async () =&gt; {
+<pre><code class="hljs css js">beforeEach(async () =&gt; {
                    ^
-<span class="hljs-symbol">SyntaxError:</span> Unexpected token (
-    at Object.exports.runInThisContext (vm.<span class="hljs-symbol">js:</span><span class="hljs-number">76</span>:<span class="hljs-number">16</span>)
-    at Module._compile (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:545:28)</span>
-    at loader (<span class="hljs-regexp">/Users/builduser</span><span class="hljs-regexp">/buildAgent/work</span><span class="hljs-regexp">/34eee2d16ef6c34b/node</span>_modules/babel-register/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">node</span>.<span class="hljs-title">js</span>:144:5)</span>
-    at Object.<span class="hljs-keyword">require</span>.extensions.(anonymous function) [<span class="hljs-keyword">as</span> .js] (<span class="hljs-regexp">/Users/builduser</span><span class="hljs-regexp">/buildAgent/work</span><span class="hljs-regexp">/34eee2d16ef6c34b/node</span>_modules/babel-register/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">node</span>.<span class="hljs-title">js</span>:154:7)</span>
-    at Module.load (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:490:32)</span>
-    at tryModuleLoad (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:449:12)</span>
-    at Function.Module._load (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:441:3)</span>
-    at Module.<span class="hljs-keyword">require</span> (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:500:17)</span>
-    at <span class="hljs-keyword">require</span> (internal/<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:20:19)</span>
-    at /Users/builduser/buildAgent/work/<span class="hljs-number">34</span>eee2d16ef6c34b/node_modules/mocha/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">mocha</span>.<span class="hljs-title">js</span>:230:27</span>
-    at Array.forEach (native)
-    at Mocha.loadFiles (<span class="hljs-regexp">/Users/builduser</span><span class="hljs-regexp">/buildAgent/work</span><span class="hljs-regexp">/34eee2d16ef6c34b/node</span>_modules/mocha/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">mocha</span>.<span class="hljs-title">js</span>:227:14)</span>
-    at Mocha.run (<span class="hljs-regexp">/Users/builduser</span><span class="hljs-regexp">/buildAgent/work</span><span class="hljs-regexp">/34eee2d16ef6c34b/node</span>_modules/mocha/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">mocha</span>.<span class="hljs-title">js</span>:495:10)</span>
-    at Object.&lt;anonymous&gt; (<span class="hljs-regexp">/Users/builduser</span><span class="hljs-regexp">/buildAgent/work</span><span class="hljs-regexp">/34eee2d16ef6c34b/node</span>_modules/mocha/bin/<span class="hljs-symbol">_mocha:</span><span class="hljs-number">460</span>:<span class="hljs-number">18</span>)
-    at Module._compile (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:573:32)</span>
-    at Object.Module._extensions..js (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:582:10)</span>
-    at Module.load (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:490:32)</span>
-    at tryModuleLoad (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:449:12)</span>
-    at Function.Module._load (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:441:3)</span>
-    at Module.runMain (<span class="hljs-class"><span class="hljs-keyword">module</span>.<span class="hljs-title">js</span>:607:10)</span>
-    at run (bootstrap_node.<span class="hljs-symbol">js:</span><span class="hljs-number">382</span>:<span class="hljs-number">7</span>)
-    at startup (bootstrap_node.<span class="hljs-symbol">js:</span><span class="hljs-number">137</span>:<span class="hljs-number">9</span>)
-    at bootstrap_node.<span class="hljs-symbol">js:</span><span class="hljs-number">497</span>:<span class="hljs-number">3</span>
-child_process.<span class="hljs-symbol">js:</span><span class="hljs-number">531</span>
+SyntaxError: Unexpected token (
+    at Object.exports.runInThisContext (vm.js:76:16)
+    at Module._compile (module.js:545:28)
+    at loader (/Users/builduser/buildAgent/work/34eee2d16ef6c34b/node_modules/babel-register/lib/node.js:144:5)
+    at Object.require.extensions.(anonymous function) [as .js] (/Users/builduser/buildAgent/work/34eee2d16ef6c34b/node_modules/babel-register/lib/node.js:154:7)
+...
+child_process.js:531
     throw err;
 </code></pre>
 <p><strong>Solution:</strong> This error means that your version of Node does not support <code>async-await</code> syntax. You should do the following:</p>

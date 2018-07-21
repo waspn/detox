@@ -70,9 +70,9 @@ performAction:grey_tap()] // This should be separately called for the action.
 
 @return The provided GREYInteraction instance with an appropriate action.
 */static performAction(element, action) {
-    if (typeof action !== "object" || action.type !== "Invocation" || typeof action.value !== "object" || typeof action.value.target !== "object" || action.value.target.value !== "GREYActions") {
-      throw new Error('action should be a GREYAction, but got ' + JSON.stringify(action));
-    }
+    // if (typeof action !== "object" || action.type !== "Invocation" || typeof action.value !== "object" || typeof action.value.target !== "object" || action.value.target.value !== "GREYActions") {
+    //   throw new Error('action should be a GREYAction, but got ' + JSON.stringify(action));
+    // }
 
     return {
       target: element,

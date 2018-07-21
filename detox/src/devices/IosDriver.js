@@ -11,12 +11,21 @@ class IosDriver extends DeviceDriverBase {
   constructor(client) {
     super(client);
 
+    this.invocationManager = new InvocationManager(client);
     this.expect = require('../ios/expect');
-    this.expect.setInvocationManager(new InvocationManager(client));
+    this.expect.setInvocationManager(this.invocationManager);
+
+    // Small hack to not bloat the internal API with injections
+    // We could think about using some inversion of control mechanism like inversify
+    global.invocationManager = this.invocationManager;
+    
+    // Only a part-time solution to showcase the "new" refactoring for expect
+    this.expect2 = require("../expect/ios");
   }
 
   exportGlobals() {
     this.expect.exportGlobals();
+    this.expect2.exportGlobals();
   }
 
   createPayloadFile(notification) {

@@ -23,9 +23,8 @@ const EspressoDetox = 'com.wix.detox.espresso.EspressoDetox';
 class AndroidDriver extends DeviceDriverBase {
   constructor(client) {
     super(client);
-    this.expect = require('../android/expect');
     this.invocationManager = new InvocationManager(client);
-    this.expect.setInvocationManager(this.invocationManager);
+    this.expect = require('../expect/android')(this.invocationManager);
 
     this.adb = new ADB();
     this.aapt = new AAPT();

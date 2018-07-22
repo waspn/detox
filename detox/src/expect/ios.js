@@ -34,6 +34,10 @@ class IosElement extends Element {
     this.tap = wrapAction(this, this.tap);
   }
 
+  /**
+   * On iOS this comes with a delay of 200ms
+   * @param {string} foo - Is a helpful param 
+   */
   tap() {
     return GreyActions.actionForTap();
   }
